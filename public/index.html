@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="inner">
+        <div class="score a">
+            <p class="score__inner" id="a">0</p>
+        </div>
+        <div class="survey">
+            <div class="row">
+                <div class="result show" id="s1"><p>1</p></div>
+                <div class="result show" id="s2"><p>2</p></div>
+                <div class="result show" id="s3"><p>3</p></div>
+            </div>
+            <div class="row">
+                <div class="result show" id="s4"><p>4</p></div>
+                <div class="result show" id="s5"><p>5</p></div>
+                <div class="result show" id="s6"><p>6</p></div>
+            </div>
+        </div>
+        <div class="says">
+            <div class="row">
+                <div class="result hide" id="a1"><p class="answer" id="a1a">Cats</p><p class="count" id="a1c">2</p></div>
+                <div class="result hide" id="a2"><p class="answer" id="a2a">Dogs</p><p class="count" id="a2c">400</p></div>
+                <div class="result hide" id="a3"><p class="answer" id="a3a">Castle</p><p class="count" id="a3c">20</p></div>
+            </div>
+            <div class="row">
+                <div class="result hide" id="a4"><p class="answer" id="a4a">Kingdom</p><p class="count" id="a4c">90</p></div>
+                <div class="result hide" id="a5"><p class="answer" id="a5a">Massive Castle</p><p class="count" id="a5c">75</p></div>
+                <div class="result hide" id="a6"><p class="answer" id="a6a">20 char is the max.......</p><p class="count" id="a6c">23</p></div>
+            </div>
+        </div>
+        <div class="score b">
+            <p class="score__inner" id="b">100</p>
+        </div>
+    </div>
+    <div class="teams">
+        <h1 class="teamA" id="teamA">2B</h1>
+        <h1 class="teamB" id="teamB">3B</h1>
+    </div>
+    <div class="question__outer"><h1 class="question" id="question">Get Ready!</h1></div>
+    <div class="score current">
+        <p class="score__inner" id="current">0</p>
+    </div>
+    <div class="bg"></div>
+    <div class="wrong">
+        <div class="wrong__inner" id="wrong">X X X</div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>

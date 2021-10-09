@@ -1,0 +1,167 @@
+[
+    {
+        "text": "Get Ready!",
+        "answers": [
+            "a1",
+            "a2",
+            "a3",
+            "a4",
+            "a5",
+            "a6"
+        ],
+        "results": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "text": "Burgmann is the _____ college",
+        "answers": [
+            "Pretentious",
+            "Annoying",
+            "Expensive",
+            "Sexy",
+            "Overrated",
+            "Sporty"
+        ],
+        "results": [
+            31,
+            22,
+            20,
+            12,
+            10,
+            5
+        ]
+    },
+    {
+        "text": "Name a type of gun that doesn’t shoot bullets",
+        "answers": [
+            "Water",
+            "Nerf",
+            "Staple/ Nail",
+            "Finger",
+            "Paint",
+            "Potato"
+        ],
+        "results": [
+            60,
+            12,
+            10,
+            8,
+            6,
+            4
+        ]
+    },
+    {
+        "text": "Name something you might replace after a breakup",
+        "answers": [
+            "Lockscreen/Photos",
+            "Partner",
+            "Sheets",
+            "Clothes",
+            "Jewellery"
+        ],
+        "results": [
+            39,
+            24,
+            15,
+            12,
+            9
+        ]
+    },
+    {
+        "text": "Twilight would have been better if Bella Swan had been played by ______",
+        "answers": [
+            "Robert Pattinson",
+            "No One",
+            "Jack Black",
+            "Jennifer Lawson",
+            "Nicholas Cage",
+            "Kanye West"
+        ],
+        "results": [
+            22,
+            22,
+            11,
+            11,
+            11,
+            11
+        ]
+    },
+    {
+        "text": "ANU claims to have the best _____",
+        "answers": [
+            "Campus",
+            "Support/ Facilities",
+            "Nature",
+            "People",
+            "Education",
+            "Research"
+        ],
+        "results": [
+            23,
+            19,
+            17,
+            15,
+            13,
+            11
+        ]
+    },
+    {
+        "text": "What’s the most likely cause of a scooter crash?",
+        "answers": [
+            "DUI",
+            "2+ Passengers",
+            "Pedestrians",
+            "Curb/ Kerb",
+            "High Speed"
+        ],
+        "results": [
+            71,
+            10,
+            8,
+            6,
+            4
+        ]
+    },
+    {
+        "text": "Whoever said money can’t buy happiness, never owned a ______",
+        "answers": [
+            "Car",
+            "Dog",
+            "Yacht",
+            "Sex Toy",
+            "Coffee",
+            "Food"
+        ],
+        "results": [
+            29,
+            16,
+            16,
+            13,
+            13,
+            13
+        ]
+    },
+    {
+        "text": "Name an inappropriate place to start singing",
+        "answers": [
+            "Funeral",
+            "Library",
+            "Court Case",
+            "Exam",
+            "Minute of Silence"
+        ],
+        "results": [
+            41,
+            23,
+            18,
+            10,
+            8
+        ]
+    }
+]

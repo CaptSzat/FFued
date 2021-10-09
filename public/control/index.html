@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Screen</title>
+    <link rel="stylesheet" href="./cstyle.css">
+</head>
+<body>
+    <div class="inner">
+        <div class="row">
+            <button id="clear">Clear Board</button>
+            <button id="reset">Reset Score</button>
+            <button id="show">Show All Answers</button>
+            <button id="hide">Hide All Answers</button>
+        </div>
+        <br>
+        <div class="question" id="question"></div>
+        <div class="row">
+            <button id="a1">Show Answer 1</button>
+            <button id="a2">Show Answer 2</button>
+            <button id="a3">Show Answer 3</button>
+            <button id="a4">Show Answer 4</button>
+            <button id="a5">Show Answer 5</button>
+            <button id="a6">Show Answer 6</button>
+        </div>
+        <br>
+        <div class="row">
+            <button id="w1">Wrong 1</button>
+            <button id="w2">Wrong 2</button>
+            <button id="w3">Wrong 3</button>
+        </div>
+        <br>
+        <div class="row">
+            <div class="column">
+                <p>Team A </p>
+                <input type="text" id="nameA">
+            </div>
+            <div class="column">
+                <p>Team B</p>
+                <input type="text" id="nameB">
+            </div>
+            <button id="updateName">Update Name</button>
+        </div>
+        <br>
+        <div class="row">
+            <button id="teamA">Team A gets the points</button>
+            <button id="teamB">Team B gets the points</button>
+        </div>
+        <br>
+        <p>ONLY INCASE OF ERROR</p>
+        <div class="row">
+            <div class="column">
+                <p>Team A Points</p>
+                <input type="text" id="pointsA">
+            </div>
+            <div class="column">
+                <p>Team B Points</p>
+                <input type="text" id="pointsB">
+            </div>
+            <button id="updateScore">Update Score</button>
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./control.js"></script>
+</body>
+</html>
