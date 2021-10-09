@@ -1,0 +1,2 @@
+# FFued
+just another Scoreboard
