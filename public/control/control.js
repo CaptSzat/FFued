@@ -149,7 +149,7 @@ function showAnswer(){
 
 socket.on('connect', () => {
   console.log("sent");
-  socket.emit('data', score);
+  // socket.emit('data', score);
 });
 
 socket.emit('data', score);
