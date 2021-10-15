@@ -82,12 +82,12 @@ var score = {
   },
 };
 
-function teamUpdate(){
-  score.nameA = document.getElementById('teamA');
-  score.nameB = document.getElementById('teamB');
-  console.log("WHY DOOO");
-  socket.emit('data', score);
-}
+// function teamUpdate(){
+//   score.nameA = document.getElementById('teamA');
+//   score.nameB = document.getElementById('teamB');
+//   console.log("WHY DOOO");
+//   socket.emit('data', score);
+// }
 
 $('#updateName').bind('click', function() {
   score.nameA = document.getElementById('nameA').value;
