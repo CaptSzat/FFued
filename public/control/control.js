@@ -147,7 +147,8 @@ function showAnswer(){
 
 
 
-socket.on('connect', () => {
+socket.on('connect', (data) => {
+  score = data;
   console.log("sent");
   // socket.emit('data', score);
 });
@@ -236,7 +237,7 @@ $('#w3').bind('click', function() {
 
 $('#a1').bind('click', function() {
   console.log("data");
-  score.a1.show = !score.a1.show;
+  score.a1.show = true;
   if(score.a1.show){
     score.currentScore += score.a1.points;
   }
@@ -245,7 +246,7 @@ $('#a1').bind('click', function() {
 });
 $('#a2').bind('click', function() {
   console.log("data");
-  score.a2.show = !score.a2.show;
+  score.a2.show = true;
   if(score.a2.show){
     score.currentScore += score.a2.points;
   }
@@ -254,7 +255,7 @@ $('#a2').bind('click', function() {
 });
 $('#a3').bind('click', function() {
   console.log("data");
-  score.a3.show = !score.a3.show;
+  score.a3.show = true;
   if(score.a3.show){
     score.currentScore += score.a3.points;
   }
@@ -263,7 +264,7 @@ $('#a3').bind('click', function() {
 });
 $('#a4').bind('click', function() {
   console.log("data");
-  score.a4.show = !score.a4.show;
+  score.a4.show = true;
   if(score.a4.show){
     score.currentScore += score.a4.points;
   }
@@ -272,7 +273,7 @@ $('#a4').bind('click', function() {
 });
 $('#a5').bind('click', function() {
   console.log("data");
-  score.a5.show = !score.a5.show;
+  score.a5.show = true;
   if(score.a5.show){
     score.currentScore += score.a5.points;
   }
@@ -282,7 +283,7 @@ $('#a5').bind('click', function() {
 $('#a6').bind('click', function() {
   console.log("data");
   if(!score.a6.hide){
-    score.a6.show = !score.a6.show;
+    score.a6.show = true;
     if(score.a6.show){
       score.currentScore += score.a6.points;
     }

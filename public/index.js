@@ -64,6 +64,12 @@ let a6c = document.getElementById("a6c");
 
 let wrong = document.getElementById("wrong");
 
+socket.on('connect', (data) => {
+  score = data;
+  console.log("sent");
+});
+
+
 socket.on('data', (data) => {
   console.log(data);
   score = data;
