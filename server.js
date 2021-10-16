@@ -2,6 +2,7 @@
 
 const express = require('express');
 const socketIO = require('socket.io');
+// var json = require('./score.json')
 const path = require('path');
 const PORT = process.env.PORT || 3000;
 const INDEX = '/public/';
@@ -15,13 +16,13 @@ const server = express()
 
 const io = socketIO(server);
 
-var store = {
+var score = {
   teamA: 0,
   teamB: 0,
   currentScore: 0,
   wrong: 0,
   question: "Get Ready!",
-  nameA: "A",
+  nameA: "Server",
   nameB: "B",
   a1: {
     answer: "a1",
@@ -53,18 +54,24 @@ var store = {
     points: 0,
     show: false,
     hide: false
-  },
+  }
 };
 
 io.on('connection', (socket) => {
   console.log('Client connected');
+  console.log(score);
+  // io.emit('connect', score);
   socket.on('disconnect', () => console.log('Client disconnected'));
   socket.on('data', (data) => {
+    score = data;
     console.log("data");
-    store = data;
     console.log(data);
-    io.emit('data', store)});
-  socket.on('joined', () => io.emit('connect', store));
+    io.emit('data', score)});
+
+  socket.on('joined', () => {
+    console.log("Connect");
+    console.log(score);
+    socket.emit('initial', score)});
   // io.emit('connect', () => console.log('Client connect ping sent'));
 });
 

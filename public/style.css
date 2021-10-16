@@ -8,7 +8,9 @@
   --rightFont: 50px;
   --background-1: rgb(18, 27, 160);
   --background-2: rgb(25, 28, 190);
-  --background-3: rgb(20, 21, 83);
+  --background-3: rgb(17, 9, 94);
+  --background-4: rgb(255, 239, 97);
+  --background-5: rgb(231, 211, 31);
 }
 
 * {
@@ -232,7 +234,7 @@
 
 .teams {
   position: absolute;
-  top: 15vh;
+  top: 25vh;
   left: 0;
   z-index: 10;
   width: 100vw;
@@ -247,6 +249,7 @@
 
 .teams .teamA {
   padding: 0 0.5rem 0 0.5rem;
+  font-size: 0.6rem;
   width: 13vw;
   color: rgba(215, 216, 208, 0.95);
   -webkit-transform: skewX(-15deg);
@@ -259,6 +262,7 @@
 
 .teams .teamB {
   padding: 0 0.5rem 0 0.5rem;
+  font-size: 0.6rem;
   width: 13vw;
   color: rgba(215, 216, 208, 0.95);
   -webkit-transform: skewX(-15deg);
@@ -322,9 +326,9 @@
 .question__outer {
   position: absolute;
   z-index: 100;
-  top: 7vh;
+  top: 2vh;
   left: 0;
-  width: 100vw;
+  width: 99vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -334,11 +338,18 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow: hidden;
 }
 
 .question__outer .question {
-  color: rgba(215, 216, 208, 0.95);
-  font-size: 0.725rem;
+  width: 85%;
+  color: rgba(0, 0, 0, 0.95);
+  font-size: 0.625rem;
+  -webkit-transform: skewX(-15deg);
+          transform: skewX(-15deg);
+  padding: 0.5em 0 0.5em 0;
+  background-color: var(--background-5);
+  border: solid 9px var(--background-4);
 }
 
 @-webkit-keyframes show {

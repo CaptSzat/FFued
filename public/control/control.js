@@ -33,10 +33,13 @@ select = document.getElementById("question");
 //     select.appendChild(option);
 // };
 var txt = "Question: ";
-txt += '<select  id="dropdown" onchange="return showAnswer();">'
+// txt += '<select  id="dropdown" onchange="return showAnswer();">'
+txt += '<select  id="dropdown">'
 for (var i = 0; i < json.length; i++) {
     txt += "<option " + 'value="'+ i +'">' + json[i].text + "</option>";
 }
+txt += '</select>';
+txt += '<button id="showQ">Show Question</button>';
 select.innerHTML = txt;
 console.log(json);
 console.log(json[0].text);
@@ -47,7 +50,7 @@ var score = {
   currentScore: 0,
   wrong: 0,
   question: "Get Ready!",
-  nameA: "A",
+  nameA: "Control",
   nameB: "B",
   a1: {
     answer: "a1",
@@ -79,9 +82,16 @@ var score = {
     points: 0,
     show: false,
     hide: false
-  },
+  }
 };
 
+socket.on('initial', (data) => {
+  console.log(data);
+  score = data;
+  console.log("HELLO");
+  socket.emit('data', score);
+});
+socket.emit('joined');
 // function teamUpdate(){
 //   score.nameA = document.getElementById('teamA');
 //   score.nameB = document.getElementById('teamB');
@@ -89,22 +99,29 @@ var score = {
 //   socket.emit('data', score);
 // }
 
-$('#updateName').bind('click', function() {
+$('#updateName').on('click', function() {
+  // console.log(score);
+  // console.log(document.getElementById('nameA').value);
+  // console.log(score.nameA);
   score.nameA = document.getElementById('nameA').value;
   score.nameB = document.getElementById('nameB').value;
   console.log("data");
   socket.emit('data', score);
 });
 
-$('#updateScore').bind('click', function() {
+$('#updateScore').on('click', function() {
   score.teamA = document.getElementById('pointsA').value;
   score.teamB = document.getElementById('pointsB').value;
   console.log("data");
   socket.emit('data', score);
 });
 
+$('#showQ').on('click', function() {
+  showQuestion();
+});
 
-function showAnswer(){
+
+function showQuestion(){
   let quest = document.getElementById('dropdown');
   console.log(quest.value);
   console.log(score.nameA);
@@ -113,7 +130,6 @@ function showAnswer(){
   document.getElementById('a3').innerHTML = json[quest.value].answers[2];
   document.getElementById('a4').innerHTML = json[quest.value].answers[3];
   document.getElementById('a5').innerHTML = json[quest.value].answers[4];
-  document.getElementById('a6').innerHTML = json[quest.value].answers[5];
 
   score.question = json[quest.value].text;
 
@@ -139,7 +155,9 @@ function showAnswer(){
   console.log(json[quest.value].answers.length);
   if(json[quest.value].answers.length == 5){
     score.a6.hide = true;
+    document.getElementById('a6').innerHTML = "Only 5 Answers";
   }else{
+    document.getElementById('a6').innerHTML = json[quest.value].answers[5];
     score.a6.hide = false;
   }
   socket.emit('data', score);
@@ -147,14 +165,8 @@ function showAnswer(){
 
 
 
-socket.on('connect', (data) => {
-  score = data;
-  console.log("sent");
-  // socket.emit('data', score);
-});
-
-socket.emit('data', score);
-$('#clear').bind('click', function() {
+// socket.emit('data', score);
+$('#clear').on('click', function() {
   score.a1.show = false;
   score.a2.show = false;
   score.a3.show = false;
@@ -167,7 +179,7 @@ $('#clear').bind('click', function() {
   socket.emit('data', score);
 });
 
-$('#show').bind('click', function() {
+$('#show').on('click', function() {
   score.a1.show = true;
   score.a2.show = true;
   score.a3.show = true;
@@ -179,7 +191,7 @@ $('#show').bind('click', function() {
   socket.emit('data', score);
 });
 
-$('#hide').bind('click', function() {
+$('#hide').on('click', function() {
   score.a1.show = false;
   score.a2.show = false;
   score.a3.show = false;
@@ -191,7 +203,7 @@ $('#hide').bind('click', function() {
   socket.emit('data', score);
 });
 
-$('#reset').bind('click', function() {
+$('#reset').on('click', function() {
   score.teamA = 0;
   score.teamB = 0;
   score.currentScore = 0;
@@ -200,7 +212,7 @@ $('#reset').bind('click', function() {
   socket.emit('data', score);
 });
 
-$('#teamA').bind('click', function() {
+$('#teamA').on('click', function() {
   score.teamA += score.currentScore;
   score.currentScore = 0;
   score.wrong = 0;
@@ -208,7 +220,7 @@ $('#teamA').bind('click', function() {
   socket.emit('data', score);
 });
 
-$('#teamB').bind('click', function() {
+$('#teamB').on('click', function() {
   score.teamB += score.currentScore;
   score.currentScore = 0;
   score.wrong = 0;
@@ -216,75 +228,76 @@ $('#teamB').bind('click', function() {
   socket.emit('data', score);
 });
 
-$('#w1').bind('click', function() {
+$('#w1').on('click', function() {
   score.wrong = 1;
   console.log("data");
   socket.emit('data', score);
 });
 
-$('#w2').bind('click', function() {
+$('#w2').on('click', function() {
   score.wrong = 2;
   console.log("data");
   socket.emit('data', score);
 });
 
-$('#w3').bind('click', function() {
+$('#w3').on('click', function() {
   score.wrong = 3;
   console.log("data");
   socket.emit('data', score);
 });
 
 
-$('#a1').bind('click', function() {
+$('#a1').on('click', function() {
   console.log("data");
-  score.a1.show = true;
-  if(score.a1.show){
+  if(!score.a1.show){
+    score.a1.show = true;
     score.currentScore += score.a1.points;
   }
   score.wrong = 0;
   socket.emit('data', score);
 });
-$('#a2').bind('click', function() {
+$('#a2').on('click', function() {
   console.log("data");
-  score.a2.show = true;
-  if(score.a2.show){
+  if(!score.a2.show){
+    score.a2.show = true;
     score.currentScore += score.a2.points;
   }
   score.wrong = 0;
   socket.emit('data', score);
 });
-$('#a3').bind('click', function() {
+$('#a3').on('click', function() {
   console.log("data");
-  score.a3.show = true;
-  if(score.a3.show){
+  if(!score.a3.show){
+    score.a3.show = true;
     score.currentScore += score.a3.points;
   }
   score.wrong = 0;
   socket.emit('data', score);
 });
-$('#a4').bind('click', function() {
+$('#a4').on('click', function() {
   console.log("data");
-  score.a4.show = true;
-  if(score.a4.show){
+  if(!score.a4.show){
+    score.a4.show = true;
     score.currentScore += score.a4.points;
   }
   score.wrong = 0;
   socket.emit('data', score);
 });
-$('#a5').bind('click', function() {
+$('#a5').on('click', function() {
   console.log("data");
-  score.a5.show = true;
-  if(score.a5.show){
+  if(!score.a5.show){
+    score.a5.show = true;
     score.currentScore += score.a5.points;
   }
   score.wrong = 0;
   socket.emit('data', score);
 });
-$('#a6').bind('click', function() {
+$('#a6').on('click', function() {
   console.log("data");
   if(!score.a6.hide){
-    score.a6.show = true;
-    if(score.a6.show){
+
+    if(!score.a6.show){
+      score.a6.show = true;
       score.currentScore += score.a6.points;
     }
     score.wrong = 0;

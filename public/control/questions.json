@@ -19,6 +19,25 @@
         ]
     },
     {
+        "text": "-- Game 1 -- ",
+        "answers": [
+            "a1",
+            "a2",
+            "a3",
+            "a4",
+            "a5",
+            "a6"
+        ],
+        "results": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
         "text": "Burgmann is the most _____ college",
         "answers": [
             "Pretentious",
@@ -59,7 +78,7 @@
     {
         "text": "Name something you might replace after a breakup",
         "answers": [
-            "Lockscreen/Photos",
+            "Lockscreen/ Photos",
             "Partner",
             "Sheets",
             "Clothes",
@@ -109,6 +128,25 @@
             15,
             13,
             11
+        ]
+    },
+    {
+        "text": "-- Game 2 --",
+        "answers": [
+            "a1",
+            "a2",
+            "a3",
+            "a4",
+            "a5",
+            "a6"
+        ],
+        "results": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
         ]
     },
     {

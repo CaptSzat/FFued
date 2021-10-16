@@ -6,7 +6,7 @@ var score = {
   currentScore: 0,
   wrong: 0,
   question: "Get Ready!",
-  nameA: "A",
+  nameA: "Page",
   nameB: "B",
   a1: {
     answer: "a1",
@@ -38,15 +38,22 @@ var score = {
     points: 0,
     show: false,
     hide: false
-  },
+  }
 };
+
+socket.on('initial', (data) => {
+  console.log(data);
+  score = data;
+  console.log("HELLO");
+  socket.emit('data', score);
+});
+socket.emit('joined');
 
 // $('#s1').css('z-index', '100');
 $('#a').html(score.teamA);
 $('#b').html(score.teamB);
 $('#current').html(score.currentScore);
 $('#question').html(score.question);
-socket.emit('joined');
 
 let a1a = document.getElementById("a1a");
 let a2a = document.getElementById("a2a");
@@ -64,10 +71,6 @@ let a6c = document.getElementById("a6c");
 
 let wrong = document.getElementById("wrong");
 
-socket.on('connect', (data) => {
-  score = data;
-  console.log("sent");
-});
 
 
 socket.on('data', (data) => {
