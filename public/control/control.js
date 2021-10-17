@@ -88,12 +88,24 @@ var score = {
 socket.on('initial', (data) => {
   console.log(data);
   score = data;
+  document.getElementById('teamA').innerHTML = "Team " + score.nameA + " gets the points";
+  document.getElementById('teamB').innerHTML = "Team " + score.nameB + " gets the points";
+  document.getElementById('nAreplace').innerHTML = "Team " + score.nameA;
+  document.getElementById('nBreplace').innerHTML = "Team " + score.nameB;
+  document.getElementById('nApoints').innerHTML = "Team " + score.nameA + " Points";
+  document.getElementById('nBpoints').innerHTML = "Team " + score.nameB + " Points";
   console.log("HELLO");
 });
 socket.emit('joined');
 socket.on('data', data => {
   if(data != score){
     score = data;
+    document.getElementById('nAreplace').innerHTML = "Team " + score.nameA;
+    document.getElementById('nBreplace').innerHTML = "Team " + score.nameB;
+    document.getElementById('nApoints').innerHTML = "Team " + score.nameA + " Points";
+    document.getElementById('nBpoints').innerHTML = "Team " + score.nameB + " Points";
+    document.getElementById('teamA').innerHTML = "Team " + score.nameA + " gets the points";
+    document.getElementById('teamB').innerHTML = "Team " + score.nameB + " gets the points";
   }
 });
 // function teamUpdate(){
@@ -109,6 +121,8 @@ $('#updateName').on('click', function() {
   // console.log(score.nameA);
   score.nameA = document.getElementById('nameA').value;
   score.nameB = document.getElementById('nameB').value;
+  document.getElementById('teamA').innerHTML = "Team " + score.nameA + " gets the points";
+  document.getElementById('teamB').innerHTML = "Team " + score.nameB + " gets the points";
   console.log("data");
   socket.emit('data', score);
 });
