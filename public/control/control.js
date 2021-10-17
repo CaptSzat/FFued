@@ -89,7 +89,6 @@ socket.on('initial', (data) => {
   console.log(data);
   score = data;
   console.log("HELLO");
-  socket.emit('data', score);
 });
 socket.emit('joined');
 // function teamUpdate(){
