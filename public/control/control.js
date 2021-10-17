@@ -91,6 +91,11 @@ socket.on('initial', (data) => {
   console.log("HELLO");
 });
 socket.emit('joined');
+socket.on('data', data => {
+  if(data != score){
+    score = data;
+  }
+});
 // function teamUpdate(){
 //   score.nameA = document.getElementById('teamA');
 //   score.nameB = document.getElementById('teamB');
