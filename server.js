@@ -24,6 +24,7 @@ var score = {
   question: "Get Ready!",
   nameA: "Server",
   nameB: "B",
+  gameOver: false,
   a1: {
     answer: "a1",
     points: 0,

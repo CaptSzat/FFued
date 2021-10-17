@@ -52,6 +52,7 @@ var score = {
   question: "Get Ready!",
   nameA: "Control",
   nameB: "B",
+  gameOver: false,
   a1: {
     answer: "a1",
     points: 0,
@@ -217,6 +218,12 @@ $('#hide').on('click', function() {
   score.a5.show = false;
   score.a6.show = false;
   score.wrong = 0;
+  console.log("data");
+  socket.emit('data', score);
+});
+
+$('#gameOver').on('click', function() {
+  score.gameOver = !score.gameOver;
   console.log("data");
   socket.emit('data', score);
 });

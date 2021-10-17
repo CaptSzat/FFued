@@ -276,6 +276,98 @@ body{
         border: solid 9px var(--background-4);
     }
 }
+.hideGameOver{
+    transform: translateX(-100vw);
+}
+.showGameOver{
+    transform: translateX(0);
+}
+
+.gameOver{
+    z-index: 1000000;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: 1s ease-in-out;
+    background: repeating-linear-gradient(0deg, #3473ff 0, #3473ff 20%, transparent 0, transparent 50%),repeating-linear-gradient(135deg, #ff7613 0, #ff7613 10%, transparent 0, transparent 50%);
+        background-size: 3em 3em;
+        background-color: #3473ff;
+        opacity: 1;
+    // background-color: #307ae9;
+    h1{
+        font-size: 1rem;
+        transform: skewX(-15deg);
+        padding: 0 0.7em 0 0.7em;
+        color: rgb(245,245,245);
+        background-color: #ff7613;
+        border: 9px solid #af4803;
+    }
+    .winner{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: 0.2em 1em 0.5em 1em;
+        .winnerName{
+            transform: skewX(-15deg);
+            font-size: 1.5rem;
+            padding: 0.3em 1em 0.3em 1em;
+            color: rgb(245,245,245);
+            background-color: #00A8FF;
+            border: 9px solid #33B9FF;
+            z-index: 1100000;
+        }
+        .winnerScore{
+            transform: skewX(-15deg);
+            font-size: 1.5rem;
+            color: rgb(245,245,245);
+            padding: 0.2em;
+            background-color: #00A8FF;
+            z-index: 1000000;
+        }
+    }
+    .loser{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        .loserName{
+            transform: skewX(-15deg);
+            font-size: 1rem;
+            padding: 0.3em 1em 0.3em 1em;
+            color: rgba(245, 245, 245, 0.877);
+            background-color: #0047FF;
+            border: 9px solid #336BFF;
+            z-index: 1100000;
+        }
+        .loserScore{
+            font-size: 1rem;
+            transform: skewX(-15deg);
+            color: rgba(245, 245, 245, 0.877);
+            padding: 0.2em;
+            background-color: #0047FF;
+            z-index: 1000000;
+        }
+    }
+}
+
+.leftToRightAnimation{
+    animation-name: showAnimation;
+    animation-duration: 2s;
+    animation-delay: 0.3s;
+}
+
+.leftToRightAnimation1{
+    animation-name: showAnimation;
+    animation-duration: 2s;
+    animation-delay: 0s;
+}
 
 @keyframes show { 
     20% { 
@@ -287,5 +379,17 @@ body{
         color: rgb(223, 44, 44);
         background-color: rgba(96, 76, 129, 0.596);
         border: solid 9px rgba(108, 63, 182, 0.849); 
+    } 
+}
+
+@keyframes showAnimation { 
+    0% { 
+        transform: translateX(-100%) skewX(-15deg);
+    }
+    50% { 
+        transform: translateX(-100%) skewX(-15deg);
+    } 
+    100% { 
+        transform: translateX(0) skewX(-15deg);
     } 
 }

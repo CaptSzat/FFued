@@ -359,6 +359,147 @@ body {
   border: solid 9px var(--background-4);
 }
 
+.hideGameOver {
+  -webkit-transform: translateX(-100vw);
+          transform: translateX(-100vw);
+}
+
+.showGameOver {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.gameOver {
+  z-index: 1000000;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+  background: repeating-linear-gradient(0deg, #3473ff 0, #3473ff 20%, transparent 0, transparent 50%), repeating-linear-gradient(135deg, #ff7613 0, #ff7613 10%, transparent 0, transparent 50%);
+  background-size: 3em 3em;
+  background-color: #3473ff;
+  opacity: 1;
+}
+
+.gameOver h1 {
+  font-size: 1rem;
+  -webkit-transform: skewX(-15deg);
+          transform: skewX(-15deg);
+  padding: 0 0.7em 0 0.7em;
+  color: whitesmoke;
+  background-color: #ff7613;
+  border: 9px solid #af4803;
+}
+
+.gameOver .winner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0.2em 1em 0.5em 1em;
+}
+
+.gameOver .winner .winnerName {
+  -webkit-transform: skewX(-15deg);
+          transform: skewX(-15deg);
+  font-size: 1.5rem;
+  padding: 0.3em 1em 0.3em 1em;
+  color: whitesmoke;
+  background-color: #00A8FF;
+  border: 9px solid #33B9FF;
+  z-index: 1100000;
+}
+
+.gameOver .winner .winnerScore {
+  -webkit-transform: skewX(-15deg);
+          transform: skewX(-15deg);
+  font-size: 1.5rem;
+  color: whitesmoke;
+  padding: 0.2em;
+  background-color: #00A8FF;
+  z-index: 1000000;
+}
+
+.gameOver .loser {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.gameOver .loser .loserName {
+  -webkit-transform: skewX(-15deg);
+          transform: skewX(-15deg);
+  font-size: 1rem;
+  padding: 0.3em 1em 0.3em 1em;
+  color: rgba(245, 245, 245, 0.877);
+  background-color: #0047FF;
+  border: 9px solid #336BFF;
+  z-index: 1100000;
+}
+
+.gameOver .loser .loserScore {
+  font-size: 1rem;
+  -webkit-transform: skewX(-15deg);
+          transform: skewX(-15deg);
+  color: rgba(245, 245, 245, 0.877);
+  padding: 0.2em;
+  background-color: #0047FF;
+  z-index: 1000000;
+}
+
+.leftToRightAnimation {
+  -webkit-animation-name: showAnimation;
+          animation-name: showAnimation;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+
+.leftToRightAnimation1 {
+  -webkit-animation-name: showAnimation;
+          animation-name: showAnimation;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
 @-webkit-keyframes show {
   20% {
     color: #df2c2c;
@@ -382,6 +523,36 @@ body {
     color: #df2c2c;
     background-color: rgba(96, 76, 129, 0.596);
     border: solid 9px rgba(108, 63, 182, 0.849);
+  }
+}
+
+@-webkit-keyframes showAnimation {
+  0% {
+    -webkit-transform: translateX(-100%) skewX(-15deg);
+            transform: translateX(-100%) skewX(-15deg);
+  }
+  50% {
+    -webkit-transform: translateX(-100%) skewX(-15deg);
+            transform: translateX(-100%) skewX(-15deg);
+  }
+  100% {
+    -webkit-transform: translateX(0) skewX(-15deg);
+            transform: translateX(0) skewX(-15deg);
+  }
+}
+
+@keyframes showAnimation {
+  0% {
+    -webkit-transform: translateX(-100%) skewX(-15deg);
+            transform: translateX(-100%) skewX(-15deg);
+  }
+  50% {
+    -webkit-transform: translateX(-100%) skewX(-15deg);
+            transform: translateX(-100%) skewX(-15deg);
+  }
+  100% {
+    -webkit-transform: translateX(0) skewX(-15deg);
+            transform: translateX(0) skewX(-15deg);
   }
 }
 /*# sourceMappingURL=style.css.map */

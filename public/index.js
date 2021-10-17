@@ -8,6 +8,7 @@ var score = {
   question: "Get Ready!",
   nameA: "Page",
   nameB: "B",
+  gameOver: false,
   a1: {
     answer: "a1",
     points: 0,
@@ -195,6 +196,29 @@ socket.on('data', (data) => {
     $('#wrong').addClass("showWrong");
     setTimeout(function() { remClass(); }, 3000);
     console.log("3");
+  }
+  if(score.gameOver){
+    $('#winnerScore').addClass("leftToRightAnimation");
+    $('#loserScore').addClass("leftToRightAnimation1");
+    if(score.teamA > score.teamB){
+      document.getElementById('winnerName').innerHTML = score.nameA;
+      document.getElementById('winnerScore').innerHTML = score.teamA;
+      document.getElementById('loserName').innerHTML = score.nameB;
+      document.getElementById('loserScore').innerHTML = score.teamB;
+    }else{
+      document.getElementById('winnerName').innerHTML = score.nameB;
+      document.getElementById('winnerScore').innerHTML = score.teamB;
+      document.getElementById('loserName').innerHTML = score.nameA;
+      document.getElementById('loserScore').innerHTML = score.teamA;
+    }
+    $('#gameOver').addClass("showGameOver");
+    $('#gameOver').removeClass("hideGameOver");
+  }
+  if(!score.gameOver){
+    $('#gameOver').addClass("hideGameOver");
+    $('#gameOver').removeClass("showGameOver");
+    $('#winnerScore').removeClass("leftToRightAnimation");
+    $('#loserScore').removeClass("leftToRightAnimation1");
   }
   console.log("data");
 });
