@@ -23,6 +23,10 @@
   text-transform: uppercase;
 }
 
+body {
+  overflow: hidden;
+}
+
 .inner {
   height: 100vh;
   width: 100vw;
@@ -48,6 +52,9 @@
   bottom: 3vw;
   right: 3vw;
   inset: 3vw;
+  background: linear-gradient(45deg, #4f46e580 25%, transparent 21%), linear-gradient(315deg, #4f46e580 25%, transparent 21%), linear-gradient(45deg, #4f46e5 10%, transparent 11%), linear-gradient(315deg, #4f46e5 10%, transparent 11%), linear-gradient(135deg, #4f46e580 25%, transparent 21%), linear-gradient(225deg, #4f46e580 25%, transparent 21%), linear-gradient(135deg, #4f46e5 10%, transparent 11%), linear-gradient(225deg, #4f46e5 10%, transparent 11%), radial-gradient(#4f46e5 20%, transparent 21%);
+  background-size: 3em 3em;
+  opacity: 0.5;
   background-color: var(--background-2);
   z-index: 2;
 }
