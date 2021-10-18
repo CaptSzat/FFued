@@ -182,18 +182,21 @@ socket.on('data', (data) => {
   if(score.wrong == 1){
     wrong.innerHTML = "X"
     $('#wrong').addClass("showWrong");
+    new Audio('wrong.mp3').play();
     setTimeout(function() { remClass(); }, 3000);
     console.log("1");
   }
   if(score.wrong == 2){
     wrong.innerHTML = "X X"
     $('#wrong').addClass("showWrong");
+    new Audio('wrong.mp3').play();
     setTimeout(function() { remClass(); }, 3000);
     console.log("2");
   }
   if(score.wrong == 3){
     wrong.innerHTML = "X X X"
     $('#wrong').addClass("showWrong");
+    new Audio('wrong.mp3').play();
     setTimeout(function() { remClass(); }, 3000);
     console.log("3");
   }
