@@ -129,8 +129,16 @@ $('#updateName').on('click', function() {
 });
 
 $('#updateScore').on('click', function() {
-  score.teamA = document.getElementById('pointsA').value;
-  score.teamB = document.getElementById('pointsB').value;
+  if(document.getElementById('pointsA').value == ''){
+    score.teamA = 0;
+  }else{
+    score.teamA = document.getElementById('pointsA').value;
+  }
+  if(document.getElementById('pointsB').value == ''){
+    score.teamB = 0;
+  }else{
+    score.teamB = document.getElementById('pointsB').value;
+  }
   console.log("data");
   socket.emit('data', score);
 });
