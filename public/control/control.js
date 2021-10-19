@@ -132,12 +132,12 @@ $('#updateScore').on('click', function() {
   if(document.getElementById('pointsA').value == ''){
     score.teamA = 0;
   }else{
-    score.teamA = document.getElementById('pointsA').value;
+    score.teamA = parseInt(document.getElementById('pointsA').value);
   }
   if(document.getElementById('pointsB').value == ''){
     score.teamB = 0;
   }else{
-    score.teamB = document.getElementById('pointsB').value;
+    score.teamB = parseInt(document.getElementById('pointsB').value);
   }
   console.log("data");
   socket.emit('data', score);
