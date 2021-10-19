@@ -43,7 +43,6 @@ var score = {
 };
 
 socket.on('initial', (data) => {
-  console.log(data);
   score = data;
   console.log("HELLO");
 });
@@ -74,7 +73,6 @@ let wrong = document.getElementById("wrong");
 
 
 socket.on('data', (data) => {
-  console.log(data);
   score = data;
   console.log(score.teamA);
   $('#a').html(score.teamA);
