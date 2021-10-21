@@ -228,7 +228,7 @@
             "Park/ Garden",
             "Las Vegas",
             "Vineyard",
-            "The Woods/Forest"
+            "The Woods/ Forest"
         ],
         "results": [
             56,
@@ -347,12 +347,12 @@
     {
         "text": "How much money will someone have to pay you to swim in Sully’s?",
         "answers": [
-            "$0-100",
+            "$0 - 100",
             "$1 million",
-            "$101-500",
-            "$1001-100,000",
+            "$101 - 500",
+            "$1001 - 100,000",
             "Student Loans",
-            "$501-1000"
+            "$501 - 1000"
         ],
         "results": [
             38,
