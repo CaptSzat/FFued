@@ -201,5 +201,185 @@
             10,
             8
         ]
+    },
+    {
+        "text": "-- Game 3 --",
+        "answers": [
+            "a1",
+            "a2",
+            "a3",
+            "a4",
+            "a5",
+            "a6"
+        ],
+        "results": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "text": "Besides a church, name a place where people get married",
+        "answers": [
+            "Beach",
+            "Park/ Garden",
+            "Las Vegas",
+            "Vineyard",
+            "The Woods/Forest"
+        ],
+        "results": [
+            56,
+            20,
+            13,
+            5,
+            3
+        ]
+    },
+    {
+        "text": "Name a reason your assessment would be late",
+        "answers": [
+            "Lazy/ Didn’t Do It",
+            "Forgot",
+            "Slept In",
+            "Procrastination",
+            "Sick"
+        ],
+        "results": [
+            24,
+            21,
+            21,
+            18,
+            16
+        ]
+    },
+    {
+        "text": "It is 3am, and you find yourself in Civic, starving. What do you eat?",
+        "answers": [
+            "Maccas",
+            "Kebaba",
+            "HSP",
+            "Zambreors",
+            "Mi Goreng"
+        ],
+        "results": [
+            42,
+            35,
+            19,
+            2,
+            2
+        ]
+    },
+    {
+        "text": "Besides their bed, where else do college students sleep?",
+        "answers": [
+            "Someone Else’s Room",
+            "Floor",
+            "Library",
+            "Common Room",
+            "Car"
+        ],
+        "results": [
+            33,
+            25,
+            18,
+            18,
+            6
+        ]
+    },
+    {
+        "text": "-- Game 4 --",
+        "answers": [
+            "a1",
+            "a2",
+            "a3",
+            "a4",
+            "a5",
+            "a6"
+        ],
+        "results": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "text": "Name a reason you might drop out",
+        "answers": [
+            "Lack of Motivation",
+            "Become Rich",
+            "Failing",
+            "COVID-19",
+            "Expensive",
+            "Pregnancy"
+        ],
+        "results": [
+            30,
+            20,
+            18,
+            14,
+            10,
+            6
+        ]
+    },
+    {
+        "text": "If you’re too picky, you’ll never find the right ____",
+        "answers": [
+            "Partner",
+            "Food",
+            "Style",
+            "Job",
+            "Spot in Marie Raey"
+        ],
+        "results": [
+            69,
+            15,
+            8,
+            5,
+            3
+        ]
+    },
+    {
+        "text": "How much money will someone have to pay you to swim in Sully’s?",
+        "answers": [
+            "$0-100",
+            "$1 million",
+            "$101-500",
+            "$1001-100,000",
+            "Student Loans",
+            "$501-1000"
+        ],
+        "results": [
+            38,
+            24,
+            16,
+            11,
+            8,
+            3
+        ]
+    },
+    {
+        "text": "If ____ ever got into Parliament, I’d leave the country",
+        "answers": [
+            "Burgmann Resident",
+            "Scomo",
+            "Pauline Hanson",
+            "Donald Trump",
+            "Clive Palmer",
+            "Brian Schmidt"
+        ],
+        "results": [
+            56,
+            14,
+            10,
+            10,
+            5,
+            5
+        ]
     }
 ]
